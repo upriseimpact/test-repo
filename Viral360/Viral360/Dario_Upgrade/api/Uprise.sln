@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uprise.Api", "src\Uprise.Api\Uprise.Api.csproj", "{A649E40D-4724-4A30-9A88-B6883E339BE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A649E40D-4724-4A30-9A88-B6883E339BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A649E40D-4724-4A30-9A88-B6883E339BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A649E40D-4724-4A30-9A88-B6883E339BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A649E40D-4724-4A30-9A88-B6883E339BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919387E3-3355-42A0-8FA8-F48BDE528487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919387E3-3355-42A0-8FA8-F48BDE528487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919387E3-3355-42A0-8FA8-F48BDE528487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919387E3-3355-42A0-8FA8-F48BDE528487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFABAE50-DB46-42CC-B2EB-3E20B077F5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFABAE50-DB46-42CC-B2EB-3E20B077F5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFABAE50-DB46-42CC-B2EB-3E20B077F5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFABAE50-DB46-42CC-B2EB-3E20B077F5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {577D78D6-54DA-43F9-950D-CB0A5F2213AA}
+	EndGlobalSection
+EndGlobal
