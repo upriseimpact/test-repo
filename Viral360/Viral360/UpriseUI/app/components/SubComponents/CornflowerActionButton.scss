@@ -1,0 +1,23 @@
+@import '../../theme.scss';
+
+.cornflower-action-button {
+    border: 1px solid $cornflower-brand-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    min-width: 140px;
+    min-height: 30px;
+    background-color: white;
+    color: $cornflower-brand-color;
+    font-weight: 300;
+    font-size: 10px;
+    font-family: inherit;
+    text-transform: uppercase;
+    margin-right: 20px;
+    
+    &[data-highlight] {
+        border-color: $cornflower-brand-color;
+        background-color: $cornflower-brand-color;
+        color: white;
+    }
+}

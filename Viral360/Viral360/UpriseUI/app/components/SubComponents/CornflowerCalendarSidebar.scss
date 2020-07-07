@@ -1,0 +1,21 @@
+@import '../../theme.scss';
+
+.cornflower-calendar-sidebar {
+    box-sizing: border-box;
+
+    > ._title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 700;
+        color: $cornflower-text-color;
+        text-transform: uppercase;
+    }
+
+    > ._calendar {
+        margin-bottom: 20px;
+    }
+}

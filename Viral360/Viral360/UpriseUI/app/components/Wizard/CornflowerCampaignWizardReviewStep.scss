@@ -1,0 +1,50 @@
+@import '../../theme.scss';
+
+.cornflower-campaign-wizard-review-step {
+    flex: auto; // grow but not shrink
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: $cornflower-gutter;
+    // max-width: 500px;
+    background-color: white;
+
+    > .preview {
+
+        > ._title {
+            font-size: 14px;
+            font-weight: 700;
+            color: $cornflower-text-color;
+            margin: 10px 0px;
+        }
+
+        > ._subtitle {
+            font-size: 10px;
+            font-weight: 400;
+            color: $cornflower-secondary-text-color;
+            text-transform: uppercase;
+            margin: 5px 20px;
+
+            > p {
+                font-size: 14px;
+                font-weight: 700;
+                margin: 0px;
+                color: $cornflower-text-color;
+            }
+
+            > ._tag-container {
+                display: flex;
+                flex-direction: row;
+
+                >._tags {
+                    color: $cornflower-whitesmoke;
+                    background-color: $cornflower-brand-color;
+                    border-radius: 10px;
+                    padding: 5px;
+                    margin: 5px;
+                }
+            }
+            
+        }
+    }
+}

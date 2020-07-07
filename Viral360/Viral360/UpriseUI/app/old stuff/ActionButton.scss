@@ -1,0 +1,32 @@
+@import '../theme.scss';
+
+.action-button {
+    > button {
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        background-color: $red;
+        min-width: 140px;
+        min-height: 30px;
+        padding: 5px 15px;
+        border-radius: 20px;
+        color: $secondary-text-color;
+        font-weight: 300;
+        font-size: 14px;
+        font-family: inherit;
+
+        &[data-small] {
+            min-width: 90px;
+        }
+
+        &[data-inverse] {
+            background-color: $secondary-text-color;
+            color: $red;
+            border-color: $red;
+        }
+
+        &:disabled {
+            background-color: $salmon;
+            color: $light-gray;
+        }
+    }
+}

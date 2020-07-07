@@ -1,0 +1,89 @@
+@import '../../theme.scss';
+
+.cornflower-session-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+
+    > ._side {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $cornflower-whitesmoke;
+        padding: 20px 0;
+        width: 80px;
+        align-items: center;
+        background-color: white;
+        overflow-y: auto;
+
+        > ._logo {
+            margin: 0 0 40px 2px; // left margin visually centres the logo image
+            width: 50px;
+            min-height: 40px;
+            background-image: url("../../assets/cornflower-session-layout-logo.png");
+            background-size: cover;
+        }
+
+        > ._menu {
+            align-self: stretch;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+
+        > ._spacer {
+            flex: 1;
+        }
+
+        > ._question {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 16px 0 rgba(153, 155, 158, 0.76);
+            width: 35px;
+            height: 35px;
+            background-color: $cornflower-brand-color;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    > ._main {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        background-color: $cornflower-snow;
+        width: 0;
+
+        > ._header {
+            flex: none;
+            border-bottom: 1px solid $cornflower-whitesmoke;
+            box-sizing: border-box;
+        }
+
+        > ._detail-scroll {
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: scroll;
+
+            ._detail {
+                display: flex;
+                flex-direction: row;
+                padding: $cornflower-gutter $cornflower-gutter 100px $cornflower-gutter;
+
+                > ._content {
+                    flex: auto;
+                    margin-right: $cornflower-gutter;
+                    min-width: 650px;
+                }
+
+                > ._auxiliary {
+                    flex: none;
+                    width: 300px;
+                }
+            }
+        }
+    }
+}

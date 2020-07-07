@@ -1,0 +1,125 @@
+@import '../theme.scss';
+
+.action-overlay {
+    position: absolute; // relative to entire body
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 0; // reset stacking order
+    font-family: 'Nunito Sans', sans-serif;
+
+    > ._overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0.3;
+        cursor: pointer;
+        z-index: -1; // put under dialog
+    }
+
+    > ._dialog {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0;
+        width: 600px;
+        background: #fff;
+        box-shadow: 0 3px 30px -10px #000;
+        overflow-y: scroll;
+
+        > ._header {
+            background-color: $light-gray;
+            padding: 20px 20px 0;
+
+            > ._title {
+                position: relative;
+                font-size: 24px;
+                font-weight: 500;
+                color: $brand-color;
+
+                > ._close {
+                    $icon-size: 24px;
+
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: 0; // reset default
+                    border: 0;
+                    padding: 0; // reset default
+                    width: $icon-size;
+                    height: $icon-size;
+                    overflow: hidden;
+                    text-indent: -999px; // hide label
+                    background: transparent;
+                    color: $brand-color;
+
+                    > ._close-icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: flex;
+                        width: $icon-size;
+                        height: $icon-size;
+                        font-size: $icon-size;
+                        line-height: 1;
+                        text-indent: 0; // reset from parent
+                        color: $brand-color;
+                    }
+                }
+            }
+
+            > ._form-nav {
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                margin: 10px 0 0; // override defaults
+                padding: 0; // override defaults
+                height: 50px;
+
+                > li {
+                    height: 100%;
+                    margin-right: $spacing;
+
+                    > a:link,
+                    > a:visited,
+                    > a:hover,
+                    > a:active {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        box-sizing: border-box;
+                        border-bottom: 4px solid transparent;
+                        height: 100%;
+                        color: $brand-color;
+                        text-decoration: none;
+
+                        &[data-selected=true] {
+                            border-bottom-color: $turquoise;
+                        }
+                    }
+                }
+            }
+        }
+
+        > form {
+            padding: 20px 20px 40px;
+
+            > ._actions {
+                margin-top: 20px;
+
+                > ._error {
+                    margin: auto 20px auto 0;
+                    padding-bottom: 2px; // vertical nudge
+                    color: $red;
+                }
+            }
+        }
+    }
+}

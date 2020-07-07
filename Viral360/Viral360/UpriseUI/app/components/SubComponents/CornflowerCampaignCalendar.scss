@@ -1,0 +1,139 @@
+@import '../../theme';
+
+.cornflower-campaign-calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 15px 10px;
+    min-height: 220px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15);
+    background: white;
+    overflow: hidden;
+
+    > ._header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > ._calendar {
+            padding: 15px 0;
+            font-size: 14px;
+            line-height: 16px;
+            color: $cornflower-text-color;
+        }
+
+        > ._month-selector {
+            display: flex;
+            margin-right: -8px; // compensate for extra whitespace in button
+
+            > ._month-name {
+                align-self: center;
+                text-align: center;
+                min-width: 70px;
+                line-height: 20px;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                color: $cornflower-whitesmoke;
+            }
+
+            > button {
+                display: flex;
+                margin: 0;
+                border: 0;
+                padding: 0;
+                width: 20px;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                color: $cornflower-whitesmoke;
+                font-size: 20px;
+            }
+        }
+    }
+
+    > table {
+        table-layout: fixed;
+
+        > thead > tr > th {
+            padding: 4px 6px;
+            width: 18px;
+            height: 18px;
+            text-transform: uppercase;
+            color: $cornflower-tertiary-text-color;
+            font-size: 10px;
+            font-weight: normal;
+            overflow: hidden; // clip just in case
+        }
+
+        > tbody > tr > td {
+            //padding: 4px 6px; // reset default
+            height: 18px;
+            vertical-align: middle;
+            background: white;
+            color: $cornflower-tertiary-text-color;
+            text-align: center;
+
+            > label {
+                margin: 4px 6px; // move to table padding to label margin
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                width: 20px;
+                height: 20px;
+                overflow: hidden;
+                width: auto;
+                
+                &[is-campaign="middle"] {
+                    color: white;
+                    margin: 4px -2px 4px -2px;
+                }
+                &[is-campaign="start"] {
+                    color: white;
+                    border-radius: 100% 0% 0% 100%;
+                    margin: 4px -2px 4px 6px;
+                }
+                &[is-campaign="end"] {
+                    color: white;
+                    border-radius: 0% 100% 100% 0%;
+                    margin: 4px 6px 4px -2px;
+                }
+                &[is-campaign="single"] {
+                    color: white;
+                    border-radius: 100%;
+                    margin: 4px 6px 4px 6px;
+                }
+
+                &[campaign-type='pending'] {
+                    background: lightgray;
+                }
+                &[campaign-type='live'] {
+                    background: $yellow;
+                }
+                &[campaign-type='upcoming'] {
+                    background: $turquoise;
+                }
+                &[campaign-type='complete'] {
+                    background: $light-green;
+                }
+
+                &[relative-time="present"] {
+                    color: $cornflower-text-color;
+                    font-weight: 1000;
+                }
+
+                &[relative-time="past"] {
+                    text-decoration: line-through;
+                }
+
+                > ._day {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

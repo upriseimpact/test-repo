@@ -1,0 +1,164 @@
+@import '../theme.scss';
+
+.facebook-preview {
+    box-shadow: 3px 3px 5px 1px rgba(160, 160, 160, 0.8);
+    border: 1px solid $dark-bluegray;
+    background-color: #fff;
+
+    > ._brand-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 30px;
+        background-color: $facebook-blue;
+        font-size: 20px;
+
+        > ._icon-group {
+            > svg {
+                margin-right: 20px;
+                color: $secondary-text-color;
+            }
+
+            > svg:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    > ._header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 12px 12px 0;
+
+        > ._header-details {
+            display: flex;
+            flex-direction: row;
+
+            > ._logo {
+                margin-right: 5px;
+                width: 32px;
+                height: 32px;
+                background-image: url("./topcontacts-profile1.jpg");
+                background-position: center;
+                background-size: cover;
+            }
+
+            > ._text {
+                display: flex;
+                flex-direction: column;
+
+                > ._name {
+                    color: $facebook-blue;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                > ._timestamp {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    color: $facebook-secondary-text-color;
+                    font-size: 12px;
+                    font-weight: 400;
+
+                    > svg {
+                        margin-left: 3px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        > ._more {
+            font-size: 16px;
+            line-height: 1;
+        }
+    }
+
+    > ._text {
+        margin: 0 10px 12px;
+        color: $facebook-text-color;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    > ._image {
+        height: 140px;
+        background-color: $dark-gray;
+
+        > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    > ._reactions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $dark-gray;
+        padding: 10px 12px;
+        height: 20px;
+        color: $facebook-like-comment-share;
+        font-size: 13px;
+        font-weight: 400;
+
+        > ._icon-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            > ._icon-images {
+                margin-right: 5px;
+                width: 50px;
+                height: 14px;
+                background-image: url("./campaign-preview-reactions.jpg");
+                background-position: center;
+                background-size: cover;
+            }
+        }
+
+        > ._comments-shares-count {
+            > ._comments {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    > ._action-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        height: 30px;
+
+        > ._icon-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-right: 14px;
+            width: 155px;
+            color: $facebook-like-comment-share;
+            font-size: 13px;
+            font-weight: 600;
+
+            > svg {
+                margin-right: 3px;
+            }
+        }
+
+        > ._icon-group:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+@import '../../theme.scss';
+
+.cornflower-popup-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .cornflower-popup-inner {
+        position: relative;
+        box-shadow: 0px 0px 10px 0px #d2d2d2;
+        border-radius: 5px;
+        padding: 10px 50px;
+        background: white;
+
+        > .title {
+            text-align:center;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        > .subtitle {
+            text-align:center;
+            font-size: 12px;
+            font-weight: 500;
+            color: $cornflower-secondary-text-color;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+
+        > .close {
+            position: absolute;
+            top: 4px;
+            right: 15px;
+            font-size: 50px;
+            color: $cornflower-secondary-text-color;
+            background: rgba(0,0,0, 0);
+            border:none;
+            border-radius: 50px;
+        }
+
+        > .feedback-form {
+            margin: 0px 30px;
+            > .label {
+                font-size: 18px;
+                font-weight: 500;
+                margin: 10px;
+                width:100%;
+            }
+
+            > .button_wrapper {
+                text-align: center;
+                padding: 0px 0px 10px 0px;
+                > .button {
+                    background: $cornflower-brand-color;
+                    text-align:center;
+                    bottom: 0;
+                    border-radius: 5px;
+                    padding: 10px 70px;
+                    color:white;
+                    cursor: pointer;
+                }
+            }
+
+            > .subject_wrapper {
+                margin: 10px 0px;
+                > .subject_field {
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    border: 1px solid $cornflower-tertiary-text-color;
+                    width:100%;
+                    padding: 10px;
+                }
+            }
+
+            > .message_wrapper {
+                margin: 10px 0px;
+                > .message_field {
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    padding: 10px;
+                    height: 150px;
+                    width: 450px;
+                    min-height: 40px;
+                    max-height: 50vh;
+                    min-width: 200px;
+                    max-width: 70vw;
+                    border: 1px solid $cornflower-tertiary-text-color;
+                    font-size: 14px;
+                }
+            }
+
+            @keyframes error-animation {
+                0% { border-color: $cornflower-brand-color; border-width: 1px; padding: 10px; }
+                50% { border-color: red; border-width: 3px; padding: 8px; }
+                100% { border-color: $cornflower-brand-color; border-width: 1px; padding: 10px; }
+            }
+        }
+    }
+}
+
+

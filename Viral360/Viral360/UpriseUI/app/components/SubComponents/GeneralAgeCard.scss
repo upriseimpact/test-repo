@@ -1,0 +1,18 @@
+@import '../../theme.scss';
+
+.age-card-container {
+  > .title {
+    font-size: 13px;
+    color: $cornflower-text-color;
+  }
+
+  > .subtitle {
+    font-size: 11px;
+    color: $cornflower-secondary-text-color;
+  }
+
+  > .graph .gradient-defs {
+    position: absolute;
+    z-index: -999;
+  }
+}

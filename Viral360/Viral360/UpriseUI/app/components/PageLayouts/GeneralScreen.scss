@@ -1,0 +1,26 @@
+@import '../../theme.scss';
+
+.general-screen {
+    display: flex;
+    flex-direction: column;
+
+    > ._title {
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
+    > .grid {
+      display: flex;
+      flex-direction: column;
+
+      > .row {
+        display: flex;
+        flexDirection: row;
+        margin: 0px -10px;
+        alignItems: flex-start;
+      }
+    }
+
+
+
+}

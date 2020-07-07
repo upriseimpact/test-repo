@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Uprise.Models.Campaign>
+
+@{
+    ViewBag.Title = "Manage Campaigns";
+}
+
+<h2>Manage Campaigns</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Post.OriginalMediaLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distributor.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Industry.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post.PostTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocialMedia.SocialMediaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampaignTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampaignType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <a href="@item.Post.OriginalMediaLink" target="_blank">
+                <img src="@item.Post.OriginalMediaLink" alt="Post Image" width="200" />
+            </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distributor.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Industry.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post.PostTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SocialMedia.SocialMediaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampaignTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampaignType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+    }
+
+</table>
+@Html.ActionLink("Distributor Home Page", "DistributorHome", "Distributors")

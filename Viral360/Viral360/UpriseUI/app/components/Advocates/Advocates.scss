@@ -1,0 +1,187 @@
+@import '../../theme.scss';
+
+.advocates-screen {
+    display: flex;
+    flex-direction: column;
+
+    > ._title {
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
+    > table {
+        $padding: 15px;
+        $half-padding: 8px;
+
+        table-layout: fixed;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15);
+        border-spacing: 0; // override user agent style on child elements
+        border-collapse: collapse;
+        background: white;
+        overflow: hidden; // clip rounded corners
+
+        > thead {
+            border-bottom: 1px solid $cornflower-whitesmoke;
+
+            > tr {
+                > th {
+                    border: none;
+                    padding: 0; // reset default
+                    font-size: 10px;
+                    font-weight: 500;
+                    text-align: left;
+                    color: $cornflower-text-color;
+                    vertical-align: middle;
+                    line-height: 10px;
+
+                    &.-checkbox {
+                        padding: $padding $half-padding $padding $padding; // match regular cell
+                        width: 20px;
+                        text-align: center;
+                    }
+
+                    &.-wide {
+                        width: 40%;
+                    }
+
+                    &.-narrow {
+                        width: 20%;
+                    }
+
+                    > button {
+                        display: flex;
+                        align-items: center;
+                        margin: 0; // override user agent styles
+                        border: none;
+                        padding: $padding $half-padding;
+                        width: 100%;
+                        background-color: white;
+                        color: $cornflower-text-color;
+                        cursor: pointer;
+
+                        > ._label {
+                            line-height: 10px;
+                            font-size: 10px;
+                            font-weight: 500;
+                            font-family: inherit;
+                            text-transform: uppercase;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        > ._arrow-icon {
+                            flex: none;
+                            font-size: 18px;
+                            margin-left: 4px;
+                            margin-right: -4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        > tbody {
+            > tr {
+                resize: both;
+                
+                > td {
+                    padding: $padding $half-padding; // vertical nudge
+                    vertical-align: top;
+                    text-align: left;
+                    color: $cornflower-secondary-text-color;
+                    font-size: 12px;
+                    line-height: 18px; // center text around checkbox size
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+                    &.-checkbox {
+                        line-height: 12px; // reset to shrink cell around checkbox
+                        padding-left: $padding; // full space from the edge
+                        text-align: center;
+                    }
+
+                    &.-name-and-networks {
+                        color: $cornflower-text-color;
+
+                        > ._networks {
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    &:last-child {
+                        color: $cornflower-brand-color;
+                        padding-right: $padding; // full space from the edge
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.cornflower-checkbox-input {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+
+    > input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        position: absolute;
+        margin: 0;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    > ._icon {
+        position: absolute;
+        border: 1px solid $cornflower-tertiary-text-color;
+        border-radius: 3px;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        color: white;
+        font-size: 16px;
+        pointer-events: none;
+        line-height: 0.8;
+    }
+
+    > input[type="checkbox"]:checked + ._icon {
+        border-color: $cornflower-brand-color;
+        background-color: $cornflower-brand-color;
+    }
+}
+
+.file-upload-button {
+    margin-left: 20px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-family: inherit;
+    color: $cornflower-lightgray;
+
+    > input {
+        font-weight: 300;
+    }
+}

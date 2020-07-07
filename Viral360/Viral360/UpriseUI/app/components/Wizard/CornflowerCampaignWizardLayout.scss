@@ -1,0 +1,97 @@
+@import '../../theme.scss';
+
+.cornflower-campaign-wizard-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 768px;
+
+    > ._header {
+        flex: 0 0 auto;
+        box-sizing: border-box;
+
+        > ._title {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 10px 40px;
+
+            > ._logo {
+                margin-right: 20px;
+                min-width: 40px;
+                min-height: 30px;
+                background-image: url("../../assets/cornflower-session-layout-logo.png");
+                background-size: cover;
+            }
+
+            > ._step-number {
+                margin-right: $cornflower-gutter;
+
+                > h1 {
+                    margin: 0; // override default style
+                    padding: 0;
+                    font-size: 16px;
+                    font-weight: 300;
+                    white-space: nowrap;
+                }
+            }
+
+            > ._title-spacer {
+                flex: 1;
+            }
+
+            > ._button-spacer {
+                width: 10px;
+            }
+        }
+
+        > ._nav {
+            display: flex;
+            flex-direction: row;
+            margin: 0; // override ul default style
+            border-top: 1px solid $cornflower-whitesmoke;
+            border-bottom: 1px solid $cornflower-brand-color;
+            padding: 0; // override ul default style
+            list-style-type: none;
+            height: 30px;
+
+            > li {
+                flex: 1;
+                border-left: 1px solid $cornflower-whitesmoke;
+                min-width: 100px;
+                background-color: $cornflower-snow;
+
+                &:last-child {
+                    border-right: 1px solid $cornflower-whitesmoke;
+                }
+
+                > a {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: $cornflower-secondary-text-color;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    cursor: default; //for disabled version
+
+                    &.-active {
+                        background: $cornflower-whitesmoke;
+                    }
+                }
+            }
+        }
+    }
+
+    > ._detail-scroll { // separate scroll from padding
+        flex: 1;
+        overflow-x: auto;
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,23 @@
+@import '../../theme.scss';
+
+.general-user-map-container {
+
+  > .title {
+    color: $cornflower-text-color;
+    font-size: 13px;
+    padding: 15px;
+
+    > .country {
+      color: $cornflower-brand-color;
+    }
+  }
+
+  > .map {
+    padding: 10px;
+
+    > svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

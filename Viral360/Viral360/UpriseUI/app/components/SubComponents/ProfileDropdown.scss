@@ -1,0 +1,72 @@
+@import '../../theme.scss';
+
+.profile-dropdown {
+
+  .profile-trigger-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    > ._user-headshot {
+        margin-right: 10px;
+        box-shadow: 0 2px 6px 0 rgba(153, 155, 158, 0.76);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-position: center;
+        background-size: cover;
+
+        > img {
+          width: inherit;
+          height: inherit;
+          border-radius: inherit;
+        }
+    }
+
+    > ._user-name {
+        margin-right: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    > ._arrow-icon {
+        color: $cornflower-gainsboro;
+        font-size: 24px;
+        line-height: 24px;
+    }
+  }
+
+  .dropdown-display-container {
+    > .option {
+      font-size: 10px;
+      display: block;
+      font-weight: 100;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      text-decoration: none;
+
+      > ._with-image {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > .icon {
+          width: 20px;
+          height: 20px;
+          background-image: url("../../assets/Uprise_Icon_Colourful.png");
+          background-size: contain;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    > .divider {
+      transform: translateX(-10px);
+      margin: 13px 0px;
+      border: 0.5px solid #F0F0F0;
+    }
+  }
+}

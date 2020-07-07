@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Henri Aubert",
+    "score": 3784,
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/80.jpg",
+    "up": true
+  },
+  {
+    "name": "Jerome Porter",
+    "score": 3544,
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/16.jpg",
+    "up": true
+  },
+  {
+    "name": "Kate Cook",
+    "score": 2739,
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/29.jpg",
+    "up": false
+  },
+  {
+    "name": "Antonio Steine",
+    "score": 1032,
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/46.jpg",
+    "up": false
+  },
+  {
+    "name": "Brittany Hansen",
+    "score": 1332,
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/61.jpg",
+    "up": false
+  }
+]

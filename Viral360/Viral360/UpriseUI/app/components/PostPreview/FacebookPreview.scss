@@ -1,0 +1,237 @@
+@import '../../theme.scss';
+
+.facebook-preview {
+    background-color: #fff;
+    border-radius: inherit;
+
+    > ._brand-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 30px;
+        background-color: $facebook-blue;
+        font-size: 20px;
+
+        > ._icon-group {
+            > svg {
+                margin-right: 20px;
+                color: $secondary-text-color;
+            }
+
+            > svg:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    > ._header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 12px 12px 0;
+
+        > ._header-details {
+            display: flex;
+            flex-direction: row;
+
+            > ._logo {
+                margin-right: 5px;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                background-image: none;
+                background-position: center;
+                background-size: cover;
+                background-color: $cornflower-lightgray;
+
+                > img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                }
+
+                &[data-preview=true] {
+                    border: 1px solid $cornflower-lightgray;
+                    background-color: $cornflower-snow;
+                }
+            }
+
+            > ._text {
+                display: flex;
+                flex-direction: column;
+
+                > ._name {
+                    color: $facebook-blue;
+                    font-size: 14px;
+                    font-weight: 600;
+                    min-height: 8px;
+                    min-width: 80px;
+                    background-color: inherit
+
+                    &[data-preview=true] {
+                        margin-bottom: 0;
+                        color: $cornflower-text-color;
+                        font-size: 12px;
+                        font-weight: 600;
+                        background-color: $cornflower-snow;
+                    }
+                }
+
+                > ._timestamp {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    color: $facebook-secondary-text-color;
+                    font-size: 12px;
+                    font-weight: 400;
+
+                    > svg {
+                        margin-left: 3px;
+                        font-size: 16px;
+                    }
+
+
+                }
+            }
+        }
+
+        > ._more {
+            font-size: 24px;
+            line-height: 1;
+        }
+    }
+
+    > ._text {
+        margin: 0px 10px 12px;
+        color: $facebook-text-color;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        overflow: hidden;
+        overflow-wrap: break-word;
+    }
+
+    > a {
+        text-decoration: none;
+
+        > ._image {
+            //height: 140px;
+            background-color: $cornflower-lightgray;
+
+            &[data-preview=true] {
+                background-color: $cornflower-snow;
+                min-height: 150px;
+            }
+            
+            &:hover {
+                cursor: pointer;
+                background-color: $cornflower-tertiary-text-color;
+            }
+
+            > img {
+                display: block;
+                max-width: 600px;
+                max-height: 500px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            > ._link {
+                background-color: inherit;
+                border-top: 1px solid $cornflower-secondary-text-color;
+                border-bottom: 1px solid $cornflower-secondary-text-color;
+                padding: 10px 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+    
+                > p {
+                    margin: 0px;
+                    font-size: 14px;
+                    color: $cornflower-text-color;
+                    overflow: inherit;
+                    text-overflow: inherit;
+                }
+                > h3 {
+                    margin: 0px;
+                    color: $text-color;
+                    overflow: inherit;
+                    text-overflow: inherit;
+                }
+            }
+        }
+    }
+
+    > ._reactions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $dark-gray;
+        padding: 10px 12px;
+        height: 20px;
+        color: $facebook-like-comment-share;
+        font-size: 13px;
+        font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+
+        > ._icon-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 6px;
+
+            > ._icon-images {
+                width: 100px;
+                background-image: none;
+                background-position: center;
+                background-size: cover;
+
+                > img {
+                    width: 100%;
+                    margin-bottom: -5px;
+                }
+            }
+        }
+
+        > ._comments-shares-count {
+            > ._comments {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    > ._action-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        height: 30px;
+
+        > ._icon-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15%;
+            width: 80px;
+            color: $facebook-like-comment-share;
+            font-size: 13px;
+            font-weight: 600;
+
+            > svg {
+                margin-right: 3px;
+            }
+        }
+
+        > ._icon-group:last-child {
+            margin-right: 0;
+        }
+    }
+}

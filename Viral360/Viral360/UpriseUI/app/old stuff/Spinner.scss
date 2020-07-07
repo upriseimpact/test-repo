@@ -1,0 +1,22 @@
+@import '../theme';
+
+.spinner {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+
+    > ._spinner-animation {
+        border: 8px solid $salmon;
+        border-top: 8px solid #000;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spinner-animation 2s linear infinite;
+    }
+}
+
+@keyframes spinner-animation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

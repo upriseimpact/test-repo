@@ -1,0 +1,60 @@
+@import '../../theme.scss';
+
+.inner-text-input {
+    > ._input-group {
+        > ._name {
+            display: block;
+            margin-bottom: 5px;
+            color: $dark-bluegray;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        > input {
+            display: block;
+            height: 24px;
+            box-sizing: border-box;
+            border: 1px solid $cornflower-tertiary-text-color;
+            border-radius: 3px;
+            background-color: #fff;
+            padding: 0 0 0 10px; // override defaults
+            width: 100%;
+            line-height: 24px;
+            font-weight: 300;
+            font-size: 12px;
+            font-family: inherit;
+            color: $cornflower-text-color;
+
+            &::placeholder {
+                color: $cornflower-lightgray;
+            }
+
+            &[hidden=true] {
+                visibility: hidden;
+            }
+        }
+
+        > textarea {
+            display: block;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid $cornflower-tertiary-text-color;
+            border-radius: 3px;
+            background-color: #fff;
+            padding: 10px;
+            height: 100px;
+            min-height: 50px;
+            width: 100%;
+            line-height: 24px;
+            font-weight: 300;
+            font-size: 12px;
+            font-family: inherit;
+            color: $cornflower-text-color;
+            resize: vertical;
+
+            &::placeholder {
+                color: $cornflower-lightgray;
+            }
+        }
+    }
+}

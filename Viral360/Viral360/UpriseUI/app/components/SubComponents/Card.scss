@@ -1,0 +1,23 @@
+.card {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0px 0px 10px 0px #d2d2d2;
+  border-radius: 5px;
+  padding: 10px;
+
+  &.-p30 {
+    padding: 20px;
+  }
+
+  &.-f1 {
+    flex: 1;
+  }
+
+  &.-f3 {
+    flex: 3;
+  }
+
+  &.-w30 {
+    width: 30%;
+  }
+}

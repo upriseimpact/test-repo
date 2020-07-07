@@ -1,0 +1,11 @@
+@import '../theme.scss';
+
+.image-upload-button {
+    > ._label {
+        display: block;
+        margin-bottom: 5px;
+        color: $dark-bluegray;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,75 @@
+@import '../../theme.scss';
+
+.cornflower-menu {
+    > ._menu-items {
+        margin: 0; // overrides ul defaults
+        padding: 0; // overrides ul defaults
+        list-style: none;
+        width: 100%;
+        color: $cornflower-text-color;
+
+        > li {
+            margin-bottom: 15px;
+            height: 36px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            > a {
+                display: block;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+
+                &:link,
+                &:visited {
+                    color: $cornflower-text-color;
+                }
+
+                > ._icon {
+                    position: relative;
+                    display: inline-block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    color: $cornflower-text-color;
+                    font-size: 30px;
+
+                    &:hover {
+                        > ._tooltip {
+                            visibility: visible;
+                        }
+                    }
+
+                    > ._tooltip {
+                        position: absolute;
+                        text-align: center;
+                        color: white;
+                        font-size: 12px;
+                        background-color: $cornflower-brand-color;
+                        border-radius: 10px;
+                        padding: 5px;
+                        visibility: hidden;
+                        z-index: 10;
+                        top: 105%;
+                        left: -20%;
+                    }
+                }
+
+                &.-active,
+                &:active,
+                &:hover {
+                    > ._icon {
+                        box-shadow: 0 2px 16px 0 rgba(153, 155, 158, 0.76);
+                        background-color: $cornflower-brand-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,256 @@
+@import '../../theme.scss';
+
+.default-preview {
+    box-sizing: border-box;
+    padding: 12px 12px 0 12px;
+    background-color: $cornflower-snow;
+
+    > ._header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        > ._header-details {
+            display: flex;
+            flex-direction: row;
+
+            > ._logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                min-height: 32px;
+                background-color: $cornflower-lightgray;
+
+                &[data-preview=true] {
+                    border: 1px solid $cornflower-lightgray;
+                    background-color: $cornflower-snow;
+                }
+
+                > img {
+                    width: 100%;
+                    border-radius: inherit;
+                }
+            }
+
+            > ._text {
+                display: flex;
+                flex-direction: column;
+                padding-top: 2px; // vertical nudge
+
+                > ._company-name {
+                    margin-bottom: 6px;
+                    min-height: 8px;
+                    min-width: 80px;
+                    background-color: $cornflower-lightgray;
+
+                    &[data-preview=true] {
+                        margin-bottom: 0;
+                        color: $cornflower-text-color;
+                        font-size: 12px;
+                        font-weight: 600;
+                        background-color: $cornflower-snow;
+                    }
+                }
+
+                > ._post-author {
+                    min-height: 8px;
+                    min-width: 60px;
+                    background-color: $cornflower-lightgray;
+
+                    &[data-preview=true] {
+                        color: $cornflower-gainsboro;
+                        font-size: 10px;
+                        font-weight: 300;
+                        background-color: $cornflower-snow;
+                    }
+                }
+            }
+        }
+
+        > ._launch-date {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 2px; // vertical nudge
+
+            > ._description {
+                margin-bottom: 6px;
+                min-height: 8px;
+                min-width: 60px;
+                background-color: $cornflower-lightgray;
+
+                &[data-preview=true] {
+                    margin-bottom: 0;
+                    min-height: 0;
+                    min-width: 0;
+                    color: $cornflower-text-color;
+                    font-size: 10px;
+                    font-weight: 600;
+                    background-color: $cornflower-snow;
+                }
+            }
+
+            > ._date {
+                min-height: 8px;
+                min-width: 40px;
+                background-color: $cornflower-lightgray;
+
+                &[data-preview=true] {
+                    min-height: 0;
+                    min-width: 0;
+                    color: $cornflower-gainsboro;
+                    font-size: 10px;
+                    font-weight: 300;
+                    background-color: $cornflower-snow;
+                }
+            }
+        }
+    }
+
+    > ._post-title {
+        margin-bottom: 10px;
+        color: $cornflower-text-color;
+        font-weight: 600;
+        font-size: 16px;
+
+        > ._post-text-placeholder {
+            > ._text-line {
+                margin-bottom: 6px;
+                height: 16px;
+                width: 75%;
+                background-color: $cornflower-lightgray;
+            }
+        }
+    }
+
+    > ._post-text {
+        margin-bottom: 16px;
+        color: $cornflower-text-color;
+        overflow-wrap: break-word;
+
+        > ._post-text-placeholder {
+            > ._text-line {
+                margin-bottom: 6px;
+                height: 8px;
+                width: 100%;
+                background-color: $cornflower-lightgray;
+            }
+        }
+    }
+
+    > a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        margin-bottom: 10px;
+        
+        > ._image {
+            border-radius: 7px;
+            border: 1px solid $cornflower-whitesmoke;
+            background-color: $cornflower-snow;
+            padding: 0px 0px 0px 0px;
+            cursor: pointer;
+
+            &[data-preview=false] {
+                background-color: $cornflower-lightgray;
+                min-height: 200px;
+            }
+
+            > img {
+                border-radius: 5px 5px 0px 0px;
+                display: block;
+                max-width: 600px;
+                max-height: 1000px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background-color: inherit;
+            }
+
+            > ._link-body {
+                padding: 0px 0px 5px 0px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                
+                > h4 {
+                    margin: 5px 10px;
+                    color: $cornflower-text-color;
+                    overflow: inherit;
+                    text-overflow: inherit;
+                }
+                > h5 {
+                    margin: 5px 10px;
+                    font-weight: 600;
+                    color: $cornflower-text-color;
+                    overflow: inherit;
+                    text-overflow: inherit;
+                }
+                > p {
+                    color: $cornflower-lightgray;
+                    margin: 5px 10px;
+                    color: $text-color;
+                    font-weight: 200;
+                    font-size: 12px;
+                    overflow: inherit;
+                    text-overflow: inherit;
+                }
+            }
+
+
+            &:hover {
+                border: 2px solid $cornflower-brand-color;
+                margin: -1px;
+
+                > ._link-body {
+                    > p {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    > ._goal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0;
+        height: 24px;
+
+        > ._goal-bar {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            border-radius: 10px;
+            border: 1px solid $cornflower-whitesmoke;
+            padding: 0 10px;
+            background-color: $cornflower-snow;
+            text-transform: uppercase;
+            color: $cornflower-gainsboro;
+            font-size: 10px;
+        }
+
+        > ._edit-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: 4px 4px 4px 7px;
+            height: 24px;
+            max-width: 24px;
+            background-color: $cornflower-lightgray;
+            font-size: 14px;
+            line-height: 16px;
+            color: white;
+        }
+    }
+}

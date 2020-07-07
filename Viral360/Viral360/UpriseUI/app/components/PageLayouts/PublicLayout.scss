@@ -1,0 +1,43 @@
+@import '../../theme.scss';
+
+.public-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    > ._left-column {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        min-width: 500px;
+        box-sizing: border-box;
+        padding: 0 $gutter;
+
+        > .logo {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            height: 30px;
+            .left {
+                max-width: 31.28%;
+            }
+            .right {
+                padding: 8px 0;
+                max-width: 41.71%;
+            }
+        }
+
+    }
+
+    > ._right-column {
+        flex: 1 1 50%;
+        position: relative;
+        background-image: url("../../assets/login-iphone-splash.png");
+        background-position: center;
+        background-size: cover;
+        min-width: 500px;
+
+    }
+}

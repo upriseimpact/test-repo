@@ -1,0 +1,106 @@
+﻿
+@model Uprise.Models.DistributorHomeViewModel
+
+@{
+    ViewBag.Title = "Distributor Home Page";
+}
+
+<h2>Distributor Home Page</h2>
+
+
+<div>
+    <h4>@Html.DisplayFor(model => model.FullName)</h4>
+    <hr />
+</div>
+<div class="row">
+    <div class="col-4 float-left">
+        <h2>Campaigns</h2>
+
+        <p>
+            @Html.ActionLink("Manage Campaigns", "Index", "Campaigns")
+        </p>
+        @if (Model.CampaignsList != null)
+        {
+            if (!Model.CampaignsList.Any())
+            {
+                <hr />
+                <p>No campaigns available yet.</p>
+            }
+            <table class="table">
+                @foreach (var campaign in Model.CampaignsList)
+                {
+                <tr>
+                    <td>
+                        campaign.Text
+                    </td>
+                    <td>
+                        campaign.Value
+                    </td>
+                </tr>
+                }
+            </table>
+        }
+
+    </div>
+    <div class="col-4 float-none">
+        <h2>Posts</h2>
+        <p>
+            @Html.ActionLink("Manage Posts", "Index", "Posts")
+        </p>
+        @if (Model.PostsList != null)
+        {
+            if (!Model.PostsList.Any())
+            {
+                <hr />
+                <p>No posts available yet.</p>
+            }
+            <table class="table">
+                @foreach (var post in Model.PostsList)
+                {
+                <tr>
+                    <td>
+                        post.Text
+                    </td>
+                    <td>
+                        post.Value
+                    </td>
+                </tr>
+                }
+            </table>
+        }
+
+    </div>
+    <div class="col-4 float-right">
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Manage Contacts", "Index", "Contacts")
+        </p>
+        @if (Model.ContactsList != null)
+        {
+            if (!Model.ContactsList.Any())
+            {
+                <hr />
+                <p>No contacts available yet.</p>
+            }
+            <table class="table">
+                @foreach (var contact in Model.ContactsList)
+                {
+                <tr>
+                    <td>
+                        contact.Text
+                    </td>
+                    <td>
+                        contact.Value
+                    </td>
+                </tr>
+                }
+            </table>
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

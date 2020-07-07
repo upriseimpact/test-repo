@@ -1,0 +1,53 @@
+@import '../../theme.scss';
+
+.cornflower-campaign-preview {
+    box-shadow: 0 4px 2px 0 rgba(153, 155, 158, 0.3);
+    border-radius: 8px;
+    border: 1px solid $cornflower-lightgray;
+    width: 100%;
+
+    > ._post-header {
+        border-bottom: 1px solid $cornflower-whitesmoke;
+        margin-top: auto;
+        border-bottom: 5px solid $cornflower-brand-color;
+
+        > ._social-networks {
+            display: flex;
+
+            > span {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-right: 1px solid $cornflower-whitesmoke;
+                padding: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $cornflower-lightgray;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                &[data-preview=true] {
+                    color: $cornflower-brand-color;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: $cornflower-secondary-text-color;
+                }
+            }
+        }
+
+        > ._placeholder {
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 400;
+            color: $cornflower-gainsboro;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@import '../theme.scss';
+
+.total-spend-chart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    > ._projected-label { // replaces Victory labels, which were misbehaving
+        position: absolute;
+        font-size: 10px;
+        top: 50%;
+        left: 8%;
+    }
+
+    > ._paid-label { // replaces Victory labels, which were misbehaving
+        position: absolute;
+        font-size: 10px;
+        top: 30%;
+        right: 12%;
+    }
+}

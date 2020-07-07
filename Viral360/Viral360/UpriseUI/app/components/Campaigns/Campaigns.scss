@@ -1,0 +1,455 @@
+@import '../../theme.scss';
+
+.campaigns-screen {
+    display: flex;
+    flex-direction: column;
+
+    > ._title {
+        margin-bottom: 10px;
+        height: 30px;
+    }
+
+    > .grid {
+        display: flex;
+        flex-wrap: wrap;
+
+        > .campaign-container {
+            width: 100%;
+        }
+    }
+}
+
+.campaign-table-row {
+    border: none;
+    width: 100%;
+    border-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.3);
+    box-sizing: border-box;
+
+    .row-header {
+        font-size: 16px;
+        font-weight: 600;
+        background-color: white;
+        color: $cornflower-text-color;
+        display: flex;
+        border-bottom: inherit;
+        border-radius: inherit;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        &:hover {
+            cursor: pointer;
+            background-color: $cornflower-snow;
+        }
+
+        .date-container {
+            flex: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+            width: 50px;
+
+            h1 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #373a3f;
+            }
+
+            h2 {
+                margin: 0;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 10px;
+                color: #999b9e;
+            }
+        }
+
+        .title-container {
+            flex: 1 1 auto;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 15px;
+            padding: 5px 0;
+            text-transform: uppercase;
+        }
+
+        .statusOrb {
+            flex: 0 0 auto;
+            margin: 5px;
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            min-width: 10px;
+            min-height: 10px;
+            border: 6px solid $cornflower-gainsboro;
+
+        }
+
+        .statusOrb.Pending {
+            border-color: lightgray;
+        }
+
+        .statusOrb.Live {
+            border-color: $yellow;
+        }
+        .statusOrb.Upcoming {
+            border-color: $turquoise;
+        }
+        .statusOrb.Complete {
+            border-color: $light-green;
+        }
+
+        .status-container {
+            display: flex;
+            flex: 0 0 auto;
+            right: 0;
+            width: 90px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 5px 0;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .dropdown-container {
+            flex: 0 0 auto;
+            right: 0;
+        }
+    }
+
+    .campaign-dropdown {
+        border-radius: inherit;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: white;
+
+        .body {
+            display: flex;
+
+            .left-panel {
+                width: 50%;
+    
+                p {
+                    margin: 10px;
+                }
+
+                .dropdown-header {
+                    display:flex;
+                    flex-direction: row;
+                    padding: 4px;
+
+                    a {
+                        display: flex;
+                        text-decoration: none;
+                        color: white;
+                        margin: 0 5px;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        border: none;
+                        border-radius: 3px;
+                        padding: 5px;
+                        width: 100px;
+                        box-shadow: 2px 4px 2px 0px rgba(153, 155, 158, 0.3);
+
+                        background-color: $cornflower-brand-color;
+        
+                        svg {
+                            flex: 1 1 auto;
+                        }
+                        span {
+                            flex: 1 1 auto;
+                            font-size: 10px;
+                            padding: 2px;
+                        }
+                    }
+                }
+            }
+    
+            .right-panel {
+                border-radius: 10px;
+                padding: 10px;
+                width: 50%;
+                min-width: 140px;
+            }
+
+        }
+
+    }
+}
+
+.campaign-preview {
+    box-shadow: 0 4px 2px 0 rgba(153, 155, 158, 0.3);
+    border-radius: 6px;
+    border-bottom: 1px solid $cornflower-whitesmoke;
+    border-top: 6px solid $cornflower-brand-color;
+
+    > ._post-body {
+        box-sizing: border-box;
+        padding: 20px 20px 0 20px;
+
+        > ._header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            > ._header-details {
+                display: flex;
+                flex-direction: row;
+
+                > ._logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    background-color: $cornflower-lightgray;
+
+                    &[data-preview=true] {
+                        border: 1px solid $cornflower-lightgray;
+                        background-color: $cornflower-snow;
+                    }
+
+                    > img {
+                        width: 100%;
+                        border-radius: inherit;
+                    }
+                }
+
+                > ._text {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 2px; // vertical nudge
+                    margin-right: 4px;
+
+                    > ._company-name {
+                        margin-bottom: 6px;
+                        min-height: 8px;
+                        min-width: 80px;
+                        background-color: $cornflower-lightgray;
+
+                        &[data-preview=true] {
+                            margin-bottom: 0;
+                            color: $cornflower-text-color;
+                            font-size: 12px;
+                            font-weight: 600;
+                            background-color: $cornflower-snow;
+                        }
+                    }
+
+                    > ._post-author {
+                        min-height: 8px;
+                        min-width: 60px;
+                        background-color: $cornflower-lightgray;
+
+                        &[data-preview=true] {
+                            color: $cornflower-gainsboro;
+                            font-size: 10px;
+                            font-weight: 300;
+                            background-color: $cornflower-snow;
+                        }
+                    }
+                }
+            }
+
+            > ._launch-date {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding-top: 2px; // vertical nudge
+
+                > ._description {
+                    margin-bottom: 6px;
+                    min-height: 8px;
+                    min-width: 60px;
+                    background-color: $cornflower-lightgray;
+
+                    &[data-preview=true] {
+                        margin-bottom: 0;
+                        min-height: 0;
+                        min-width: 0;
+                        color: $cornflower-text-color;
+                        font-size: 10px;
+                        font-weight: 600;
+                        background-color: $cornflower-snow;
+                    }
+                }
+
+                > ._date {
+                    min-height: 8px;
+                    min-width: 40px;
+                    background-color: $cornflower-lightgray;
+
+                    &[data-preview=true] {
+                        min-height: 0;
+                        min-width: 0;
+                        color: $cornflower-gainsboro;
+                        font-size: 10px;
+                        font-weight: 300;
+                        background-color: $cornflower-snow;
+                    }
+                }
+            }
+        }
+
+        > ._post-text {
+            margin-bottom: 16px;
+            color: $cornflower-text-color;
+
+            > ._post-text-placeholder {
+                > ._text-line {
+                    margin-bottom: 6px;
+                    height: 8px;
+                    width: 100%;
+                    background-color: $cornflower-lightgray;
+                }
+            }
+        }
+
+        > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+
+            > ._image {
+                min-height: 150px;
+                border-radius: 7px;
+                border: 1px solid $cornflower-whitesmoke;
+                background-color: $cornflower-lightgray;
+                padding: 0px 0px 5px 0px;
+                cursor: pointer;
+
+                &[data-preview=true] {
+                    background-color: $cornflower-snow;
+                }
+
+                > img {
+                    border-radius: 5px 5px 0px 0px;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                > ._link-body {
+
+                    > h4 {
+                        margin: 5px 10px;
+                        color: $cornflower-text-color;
+                    }
+                    > h5 {
+                        margin: 5px 10px;
+                        font-weight: 600;
+                        color: $cornflower-text-color;
+                    }
+                    > p {
+                        color: $cornflower-lightgray;
+                        margin: 5px 10px;
+                        color: $text-color;
+                        font-weight: 200;
+                        font-size: 12px;
+                    }
+                }
+
+                &:hover {
+                    border: 2px solid $cornflower-brand-color;
+                    margin: -1px;
+
+                    > ._link-body {
+                        > p {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        > ._goal {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 0;
+            height: 24px;
+
+            > ._goal-bar {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                border-radius: 10px;
+                border: 1px solid $cornflower-whitesmoke;
+                padding: 0 10px;
+                background-color: $cornflower-snow;
+                text-transform: uppercase;
+                color: $cornflower-gainsboro;
+                font-size: 10px;
+            }
+
+            > ._edit-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 3px;
+                box-sizing: border-box;
+                padding: 4px 4px 4px 7px;
+                height: 24px;
+                max-width: 24px;
+                background-color: $cornflower-lightgray;
+                font-size: 14px;
+                line-height: 16px;
+                color: white;
+            }
+        }
+    }
+
+    > ._post-footer {
+        border-top: 1px solid $cornflower-whitesmoke;
+        margin-top: 10px;
+
+        > ._social-networks {
+            display: flex;
+
+            > span {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-right: 1px solid $cornflower-whitesmoke;
+                padding: 5px;
+                font-size: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $cornflower-lightgray;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                &[data-preview=true] {
+                    color: $cornflower-brand-color;
+                }
+            }
+        }
+
+        > ._placeholder {
+            padding: 6px;
+            font-size: 10px;
+            font-weight: 400;
+            color: $cornflower-gainsboro;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+    }
+}
+

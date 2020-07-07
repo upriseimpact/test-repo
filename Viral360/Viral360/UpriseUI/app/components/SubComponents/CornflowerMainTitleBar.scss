@@ -1,0 +1,36 @@
+@import '../../theme.scss';
+
+.cornflower-main-title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    > ._title-group {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        text-transform: uppercase;
+
+        > ._title {
+            margin-right: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: $cornflower-text-color;
+        }
+
+        > ._action-item {
+            font-size: 12px;
+            font-weight: 600;
+            color: $cornflower-brand-color;
+        }
+    }
+
+    > ._searchbar {
+        flex: 0 0 auto;
+        width: 200px;
+    }
+}

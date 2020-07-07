@@ -1,0 +1,31 @@
+@import '../../theme.scss';
+
+.insights-card-container {
+  display: flex;
+
+  > .icon-container {
+    margin-right: 20px;
+
+    > img.icon {
+      display: block;
+      width: 30px;
+    }
+  }
+
+  > .text-conainer {
+    > .title {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    > .subtitle {
+      font-size: 8px;
+      font-weight: 500;
+      color: #adadad;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+
+}

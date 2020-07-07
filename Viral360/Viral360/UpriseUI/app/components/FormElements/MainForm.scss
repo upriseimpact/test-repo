@@ -1,0 +1,54 @@
+@import '../../theme.scss';
+
+.main-form {
+    position: relative;
+
+    > ._error {
+        margin-bottom: 28px;
+        font-size: 20px;
+        color: red;
+        text-align: center;
+    }
+
+    > ._spinner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        overflow: hidden;
+        text-align: center;
+
+        // Vertical centering aid
+        &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 0;
+            height: 100%;
+        }
+    }
+
+    > ._button-wrapper {
+        margin-top: $spacing;
+
+        > button {
+            border: none;
+            background-color: $cornflower-brand-color;
+            min-width: 100px;
+            min-height: 36px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: $cornflower-whitesmoke;
+            font-weight: 700;
+            font-size: 11px;
+            font-family: 'Montserrat', sans-serif;
+
+            &:disabled {
+                background-color: #6f6f6f;
+                color: $medium-bluegray;
+            }
+        }
+    }
+}

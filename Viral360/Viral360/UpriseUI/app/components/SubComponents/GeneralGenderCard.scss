@@ -1,0 +1,30 @@
+@import '../../theme.scss';
+
+.gender-card-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > .title {
+    font-size: 13px;
+    color: $cornflower-text-color;
+  }
+
+  > .subtitle {
+    font-size: 11px;
+    color: $cornflower-secondary-text-color;
+  }
+
+  > .graph {
+    .graph-label {
+      fill: #bdbcbf;
+      font-size: 16;
+      font-weight: 100;
+    }
+    .gradient-defs {
+      position: absolute;
+      z-index: -999;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.learderboard-containter {
+  .title {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .learderboardItem {
+    display: flex;
+    margin: 9px 0px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .name {
+    flex: 1;
+  }
+
+  .name,.score {
+    margin: 0px 10px;
+  }
+
+  .thumbnail {
+    width: 30px;
+    border-radius: 15px;
+  }
+}

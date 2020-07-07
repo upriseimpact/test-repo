@@ -1,0 +1,94 @@
+@import '../../theme.scss';
+
+.cornflower-campaign-wizard-main {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    min-height: 460px;
+    background-color: $cornflower-snow;
+
+    > ._left-spacer {
+        flex: 1 1 auto; // balance out preview sidebar sizing basis to keep main column centered
+        width: 200px;
+        border-bottom: 1px solid $cornflower-whitesmoke;
+        background-color: white;
+    }
+
+    > form {
+        flex: auto; // grow but not shrink
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        border-right: 1px solid $cornflower-whitesmoke;
+        border-bottom: 1px solid $cornflower-whitesmoke;
+        padding: 0 0 $cornflower-gutter 20px;
+        width: 1000px;
+        min-width: 375px;
+        background-color: white;
+
+        > ._main {
+            padding-top: 20px;
+            flex: auto; // grow but not shrink
+            overflow: auto;
+        }
+
+        > ._error {
+            flex: none; // prevent resizing
+            margin: 10px 0 0 0;
+            padding: 0 0 0 2px; // horizontal nudge to align with dropdown
+            font-weight: 400;
+            font-size: 12px;
+            text-align: right;
+            color: $cornflower-error;
+            margin: 0 $cornflower-gutter 0 0;
+
+            > p {
+                margin: 0;
+            }
+        }
+
+        > ._form-buttons {
+            flex: none; // prevent resizing
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px $cornflower-gutter 0 0;
+
+            > ._enter-key-default {
+                position: absolute;
+                visibility: hidden;
+                background-color: red;
+            }
+
+            > ._outer-button {
+                background-color: $cornflower-brand-color;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            > ._outer-button2 {
+                position: absolute;
+                top: 10px;
+                right: 170px;
+            }
+        }
+    }
+
+    > ._auxiliary {
+        flex: auto; // never shrink or grow
+        box-sizing: border-box;
+        padding: $cornflower-gutter 20px 0px 20px;
+        min-width: 550px;
+
+        &[include-auxiliary=false] {
+            min-width: 0px;
+        }
+    }
+
+    > ._right-spacer {
+        flex: 1; // grow from zero width to match left spacer
+    }
+}

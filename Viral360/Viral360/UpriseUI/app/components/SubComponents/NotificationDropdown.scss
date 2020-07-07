@@ -1,0 +1,48 @@
+@import '../../theme.scss';
+
+.notif-dropdown {
+
+  ._bell-icon {
+      margin-right: 10px;
+      color: $cornflower-brand-color;
+      font-size: 24px;
+      line-height: 24px;
+  }
+
+  .message-container {
+    font-size: 10px;
+
+    > .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+
+      > .title {
+        text-transform: uppercase;
+        color: $cornflower-brand-color;
+      }
+
+      > .timestamp {
+        color: $cornflower-secondary-text-color;
+        font-weight: 100;
+      }
+    }
+
+    > .message-content {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 85%;
+
+      .message-text {
+        font-weight: 100;
+      }
+    }
+
+    > .separator {
+      transform: translateX(-10px);
+      margin: 13px 0px;
+      border: 0.5px solid #F0F0F0;
+    }
+  }
+}

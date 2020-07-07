@@ -1,0 +1,54 @@
+@import '../../theme.scss';
+
+.dropdown {
+    position: relative;
+    display: block;
+    max-width: 250px;
+    cursor: pointer;
+    font-size: 10px;
+    color: $cornflower-secondary-text-color;
+    z-index: 0; // reset stacking context for select
+    text-transform: uppercase;
+
+    > ._selected-value {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid $cornflower-whitesmoke;
+        padding: 10px;
+        height: 30px;
+        background: #fff;
+        z-index: 1; // put above select
+        pointer-events: none; // clicks to underlying select
+
+        > ._icon {
+            color: $cornflower-lightgray;
+        }
+    }
+
+    > select {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-sizing: border-box;
+        border: 0;
+        width: 100%;
+        height: 30px;
+        cursor: pointer;
+        background: none;
+        font-size: inherit;
+        font-family: inherit;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

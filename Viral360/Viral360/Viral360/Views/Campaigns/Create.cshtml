@@ -1,0 +1,306 @@
+﻿@model Uprise.Models.Campaign
+
+@{
+    ViewBag.Title = "Create Campaign";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "createCampaignForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div id="div_campaign_part1" class="row">
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.DistributorId, "DistributorId", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("DistributorId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DistributorId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CampaignTitle, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CampaignTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CampaignTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SocialMediaId, "Social Media", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("SocialMediaId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SocialMediaId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IndustryId, "Industry", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("IndustryId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IndustryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.Gender, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a class="btn btn-default" onclick="ValidateHideFirstShowSecond(@ViewBag.DistributorId, '#createCampaignForm', '#div_campaign_part1', '#div_craft_your_post')">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_craft_your_post" class="row" style="display:none;">
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label class="custom-control-label col-lg-3">Craft Your Post</label>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.PostTitle, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Post.PostTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Post.PostTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.PostMessage, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Post.PostMessage, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Post.PostMessage, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.MediaType, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.Post.MediaType, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Post.MediaType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Post.OriginalMediaLink, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Post.OriginalMediaLink, new { htmlAttributes = new { @class = "form-control" }, Type = "file", onchange = "DisplayFilesToUpload('Post_OriginalMediaLink')" })
+                        @Html.ValidationMessageFor(model => model.Post.OriginalMediaLink, "", new { @class = "text-danger" })
+                    </div>
+                    <p id="FilesToUpload"></p>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a class="btn btn-default" onclick="HideFirstShowSecond('#div_craft_your_post', '#div_campaign_part1')" style="float:left;">
+                            Previous
+                        </a>
+                        <a class="btn btn-default" onclick="ValidateHideFirstShowSecond(@ViewBag.DistributorId, '#createCampaignForm', '#div_craft_your_post', '#div_add_contacts')" style="float:right;">Next</a>
+                    </div>
+                </div>
+            </div>
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.PostId, "PostId", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("PostId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PostId, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+            @* @Html.Partial("../Posts/Create")*@
+        </div>
+        <div id="div_add_contacts" class="row" style="display:none;">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="custom-control-label col-lg-3">Select Contacts</label>
+                </div>
+
+                <div class="row" id="div_add_contact">
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.SocialMediaId, "Social Media", htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("SocialMediaId", null, htmlAttributes: new { @id = "add_contact_platform_list", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SocialMediaId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="add_contact_email">Email</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-required="The Email field is required." id="add_contact_email" name="add_contact_email" type="email" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_email" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="add_contact_first_name">First Name</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length-max="100" id="add_contact_first_name" name="add_contact_first_name" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_first_name" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="add_contact_last_name">Last Name</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length-max="100" id="add_contact_last_name" name="add_contact_last_name" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_last_name" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4" for="add_contact_age">Age</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" id="add_contact_age" name="add_contact_age" type="number" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_age" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="add_contact_country">Country</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Country must be a string with a maximum length of 100." data-val-length-max="100" id="add_contact_country" name="add_contact_country" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_country" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="add_contact_province">Province</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Province must be a string with a maximum length of 100." data-val-length-max="100" id="add_contact_province" name="add_contact_province" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_province" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3" for="add_contact_city">City</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" data-val="true" data-val-length="The field City must be a string with a maximum length of 100." data-val-length-max="100" id="add_contact_city" name="add_contact_city" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="add_contact_city" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-10">
+                                @Html.EnumDropDownListFor(model => model.Gender, htmlAttributes: new { @id = "add_contact_gender", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <a class="btn btn-default" onclick="AddContact()" style="float:left;">Add Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_import_contacts" class="row">
+                    <div class="form-group">
+                        <label class="control-label col-md-3" for="file_import_contacts">Import Contacts</label>
+                        <div class="col-md-10">
+                            <input name="file_import_contacts" id="file_import_contacts" onchange="ImportContacts('file_import_contacts', @ViewBag.DistributorId,)" type="file" value="" htmlattributes="{ class = form-control }">
+                            <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="file_import_contacts"></span>
+                        </div>
+                        <p id="FilesToUpload"></p>
+                    </div>
+                    <table id="myTable"></table>
+                </div>
+                <div id="div_select_contacts" class="row">
+                    <table id="contacts_table2" class="table"></table>
+                    <table id="contacts_table" class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().Platform)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().City)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Distributor.Contacts.FirstOrDefault().Age)
+                            </th>
+                            <th></th>
+                        </tr>
+                        <tbody id="tbody_contacts"></tbody>
+
+                    </table>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a value="Previous" class="btn btn-default" onclick="HideFirstShowSecond('#div_add_contacts', '#div_craft_your_post')" style="float:left;">Previous</a>
+                        <a value="Next" class="btn btn-default" onclick="ValidateHideFirstShowSecond(@ViewBag.DistributorId, '#createCampaignForm', '#div_add_contacts', '#div_campaign_part_2')" style="float:right;">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="div_campaign_part_2" class="row" style="display:none;">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="custom-control-label col-lg-3">Finish</label>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CampaignType, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-10">
+                            @Html.EnumDropDownListFor(model => model.CampaignType, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CampaignType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 col-md-10">
+                        <a class="btn btn-default" onclick="HideFirstShowSecond('#div_campaign_part_2', '#div_add_contacts')" style="float:left;">Previous</a>
+                        <input type="submit" value="Create" class="btn btn-default" style="float:right;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

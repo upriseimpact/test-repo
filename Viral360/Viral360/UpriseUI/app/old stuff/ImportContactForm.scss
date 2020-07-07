@@ -1,0 +1,16 @@
+.import-contact-form {
+    > ._preview {
+        margin-top: 20px;
+
+        > table {
+            > thead > tr > th {
+                padding-right: 40px;
+                text-align: left;
+            }
+
+            > tbody > tr > td {
+                padding-right: 40px;
+            }
+        }
+    }
+}

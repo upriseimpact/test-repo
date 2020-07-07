@@ -1,0 +1,33 @@
+@import '../theme.scss';
+
+.dashboard-screen {
+    min-width: 600px;
+    padding-bottom: 100px;
+
+    ._row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        ._widget-box {
+            background-color: #fff;
+            height: 240px;
+            width: 280px;
+            margin: 0 10px 10px 0;
+
+            &.-double {
+                width: 570px;
+            }
+
+            > h4 {
+                font-size: 14px;
+                line-height: 40px;
+                font-weight: 500;
+                color: $turquoise;
+                border-bottom: 1px solid $light-gray;
+                margin: 0; // override defaults
+                padding: 0 20px;
+            }
+        }
+    }
+}

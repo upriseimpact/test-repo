@@ -1,0 +1,138 @@
+@import '../theme.scss';
+
+.session-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+
+    > ._side {
+        flex: 0 0 auto;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        background-color: $brand-color;
+        padding-top: 20px;
+        overflow-y: auto;
+
+        > ._logo {
+            align-self: center;
+            margin-left: 5px; // visually centres the logo image
+            width: 80px;
+            height: 80px;
+            min-height: 80px;
+            background-image: url("./session-layout-logo-colour.png");
+            background-position: center;
+            background-size: cover;
+        }
+
+        > ._user-name {
+            align-self: center;
+            color: $turquoise;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        > ._user-type {
+            align-self: center;
+            color: $secondary-text-color;
+            margin-top: 14px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    }
+
+    > ._main {
+        flex: 1 1 0%;
+        display: flex;
+        flex-direction: column;
+
+        > ._section-header {
+            height: 140px;
+            padding: 24px 70px 0 30px;
+            box-sizing: border-box;
+            background-color: $light-green;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media #{$isTablet} {
+                height: 120px;
+            }
+
+            > ._header-title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                > h1 {
+                    margin: 0; // override defaults
+                    margin-right: 20px;
+                    font-size: 30px;
+                    font-weight: 500;
+                    color: $brand-color;
+                    letter-spacing: 1px;
+                }
+
+                > ._header-action-items {
+                    margin: 0; // override defaults
+                    padding: 0; // override defaults
+                    display: flex;
+                    list-style: none;
+                    padding-top: 2px; // vertical alignment nudge
+                }
+            }
+
+            > ._header-subhead {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+
+                > ._header-nav {
+                    display: flex;
+                    flex-direction: row;
+                    list-style: none;
+                    margin: 0; // override defaults
+                    padding: 0; // override defaults
+                    height: 100%;
+
+                    > li {
+                        height: 100%;
+                        margin-right: $spacing;
+
+                        > a:link,
+                        > a:visited,
+                        > a:hover,
+                        > a:active {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            box-sizing: border-box;
+                            border-bottom: 4px solid transparent;
+                            height: 100%;
+                            color: $brand-color;
+                            text-decoration: none;
+
+                            &.-active {
+                                border-bottom-color: $turquoise;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > ._section-detail {
+            background-color: $light-gray;
+            padding: 30px;
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: scroll;
+        }
+    }
+}

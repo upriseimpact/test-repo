@@ -1,0 +1,30 @@
+@import '../../theme.scss';
+
+.reach-container {
+
+  .tab-container {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin: 0px -7.5px;
+
+    > .title {
+      font-size: 12px;
+      font-weight: 200;
+      color: $cornflower-secondary-text-color;
+      margin: 0px 7.5px;
+      text-decoration: none;
+
+      &.-selected {
+        font-size: 15px;
+        font-weight: 400;
+        color: $cornflower-text-color;
+      }
+    }
+  }
+
+  .gradient-defs {
+    position: absolute;
+    z-index: -999;
+  }
+}

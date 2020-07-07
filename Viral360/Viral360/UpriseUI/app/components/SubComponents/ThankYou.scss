@@ -1,0 +1,27 @@
+@import '../../theme';
+
+.thanker {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+
+    > ._thanker-animation {
+        border: 2px solid black;
+        border-radius: 5px;
+        background: $cornflower-brand-color;
+        box-shadow: 0 2px 16px 0 rgba(153, 155, 158, 0.76);
+        color: white;
+        width: 320px;
+        height: 80px;
+        font-size: 30px;
+        font-weight: 700;
+        padding: 10px;
+        animation-name: thanker-animation;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes thanker-animation {
+    0% { transform: translate(0em, -3em); opacity: 0.3; }
+    100% { transform: translate(0em, 0em); opacity: 1.0; }
+}

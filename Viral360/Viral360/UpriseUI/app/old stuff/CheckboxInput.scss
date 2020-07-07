@@ -1,0 +1,38 @@
+@import '../theme.scss';
+
+.checkbox-input {
+    position: relative;
+    cursor: pointer;
+
+    > input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-sizing: border-box;
+        position: absolute;
+        left: 18px;
+        top: 16px;
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        border: 1px solid $dark-gray;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    > ._icon {
+        visibility: hidden;
+        position: absolute;
+        left: 18px;
+        top: 12px;
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
+    }
+
+    > input[type="checkbox"]:checked + ._icon {
+        visibility: visible;
+    }
+}

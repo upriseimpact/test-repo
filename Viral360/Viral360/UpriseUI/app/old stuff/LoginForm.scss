@@ -1,0 +1,40 @@
+@import '../theme.scss';
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+
+    > ._title {
+        color: $dark-bluegray;
+        font-weight: 300;
+        font-size: 36px;
+        margin: 0 0 $gutter;
+
+        > span {
+            display: block;
+            font-weight: 700;
+            margin-top: -10px;
+        }
+    }
+
+    > ._footer {
+        color: $red;
+        font-weight: 300;
+        font-size: 16px;
+        min-height: $spacing;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        margin: $spacing auto 0 -15px;
+        box-sizing: border-box;
+        padding: 10px 15px;
+
+        > a {
+            color: $red;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+    }
+}
