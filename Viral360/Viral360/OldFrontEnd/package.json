@@ -21,7 +21,7 @@
     "emailjs-com": "^2.3.2",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "papaparse": "^4.6.0",
+    "papaparse": "^5.2.0",
     "react": "^16.2.0",
     "react-azure-adb2c": "^0.2.0",
     "react-collectable": "^0.6.0",
