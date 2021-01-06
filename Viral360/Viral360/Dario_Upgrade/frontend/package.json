@@ -12,7 +12,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "auth0-lock": "^11.17.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "clsx": "^1.1.0",
     "json2plain": "^0.1.1",
     "lodash": "^4.17.15",
